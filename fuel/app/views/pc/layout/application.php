@@ -9,6 +9,16 @@
   </head>
 
   <body>
+
+    <div id="gMap"></div>
+
+    <div id="header">
+      <!--LOGO-->
+      <a id="logo" href="<?php echo Uri::create('/') ?>"><?php echo Asset::img('logo.png') ?></a>
+
+    </div><!--end header-->
+
+    <div id="loading"></div>
     <?php echo $content?>
 
 

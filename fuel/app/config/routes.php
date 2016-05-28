@@ -2,11 +2,9 @@
 return array(
   '_root_'  => 'pc/home/index',  // The default route
 
-  'login' => 'pc/session/index',
-  'logout' => 'pc/session/destroy',
-  'login/check' => 'pc/session/create',
+  'chi-tiet' => 'pc/home/detail',
 
-  'api' => 'pc/session/test',
+  'test' => 'pc/home/test',
 
   // '(:any)' => function () {
   //               return View::forge('404');

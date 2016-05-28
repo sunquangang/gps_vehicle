@@ -37,10 +37,6 @@ jQuery.noConflict(); jQuery(document).ready(function(){
 		jQuery(this).not('.opened').children('span').html("+");
 		jQuery("html,body").animate({scrollTop:0},400);
 		jQuery('body.page .entry').slideToggle(400);
-	}).hover(function(){
-		jQuery(this).stop(true,true).animate({paddingLeft:"10px",backgroundColor:'#99b3cc', color:'#000'},300);
-	},function(){
-		jQuery(this).stop(true,true).animate({paddingLeft:"8px",backgroundColor:'#333',color:'#fff'},300);
 	});
 
     //CLOSE MAIN DIV

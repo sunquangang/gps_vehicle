@@ -1,13 +1,3 @@
-<div id="gMap"></div>
-
-<div id="header">
-  <!--LOGO-->
-  <a id="logo" href="index.html"><?php echo Asset::img('logo.png') ?></a>
-
-</div><!--end header-->
-
-<div id="loading"></div>
-
 <div id="contentContainer">
   <div id="content">
 
@@ -21,35 +11,36 @@
     deviceAgent = navigator.userAgent.toLowerCase(),
     iPadiPhone = deviceAgent.match(/(iphone|ipod|ipad)/);
 
-  //iPad Stuff
-  if (iPadiPhone) {
-    //ADD MAP CONTROLS AND POST ARROWS
-    jQuery("#footer").prepend('<div class="markerNav" title="Prev" id="prevMarker">&lsaquo;</div><div id="markers"></div><div class="markerNav" title="Next" id="nextMarker">&rsaquo;</div><div id="mapTypeContainer"><div id="mapStyleContainer"><div id="mapStyle" class="satellite"></div></div><div id="mapType" title="Map Type" class="satellite"></div></div>');
-  } else {//IF NOT iPad
+    //iPad Stuff
+    if (iPadiPhone) {
+      //ADD MAP CONTROLS AND POST ARROWS
+      jQuery("#footer").prepend('<div class="markerNav" title="Prev" id="prevMarker">&lsaquo;</div><div id="markers"></div><div class="markerNav" title="Next" id="nextMarker">&rsaquo;</div><div id="mapTypeContainer"><div id="mapStyleContainer"><div id="mapStyle" class="satellite"></div></div><div id="mapType" title="Map Type" class="satellite"></div></div>');
+    } else {//IF NOT iPad
 
-    jQuery(document).on('click', '#zoomIn', function(){
-      zoomLevel += 1;
-      gMap.gmap3({action: 'setOptions', args:[{zoom:zoomLevel}]});
-    });
+      jQuery(document).on('click', '#zoomIn', function(){
+        zoomLevel += 1;
+        gMap.gmap3({action: 'setOptions', args:[{zoom:zoomLevel}]});
+      });
 
-    jQuery(document).on('click', '#zoomOut', function(){
-      zoomLevel -= 1;
-      gMap.gmap3({action: 'setOptions', args:[{zoom:zoomLevel}]});
-    });
+      jQuery(document).on('click', '#zoomOut', function(){
+        zoomLevel -= 1;
+        gMap.gmap3({action: 'setOptions', args:[{zoom:zoomLevel}]});
+      });
 
-    //ADD MAP CONTROLS AND POST ARROWS
-    jQuery("#footer").prepend('<div class="markerNav" title="Prev" id="prevMarker">&lsaquo;</div><div id="markers"></div><div class="markerNav" title="Next" id="nextMarker">&rsaquo;</div><div id="mapTypeContainer"><div id="mapStyleContainer"><div id="mapStyle" class="satellite"></div></div><div id="mapType" title="Map Type" class="satellite"></div></div><div class="zoomControl" title="Zoom Out" id="zoomOut"><?php echo Asset::img("zoomOut.png") ?></div><div class="zoomControl" title="Zoom In" id="zoomIn"><?php echo Asset::img("zoomIn.png") ?></div>');
-  }
-        jQuery('body').prepend("<div id='target'></div>");
+      //ADD MAP CONTROLS AND POST ARROWS
+      jQuery("#footer").prepend('<div class="markerNav" title="Prev" id="prevMarker">&lsaquo;</div><div id="markers"></div><div class="markerNav" title="Next" id="nextMarker">&rsaquo;</div><div id="mapTypeContainer"><div id="mapStyleContainer"><div id="mapStyle" class="satellite"></div></div><div id="mapType" title="Map Type" class="satellite"></div></div><div class="zoomControl" title="Zoom Out" id="zoomOut"><?php echo Asset::img("zoomOut.png") ?></div><div class="zoomControl" title="Zoom In" id="zoomIn"><?php echo Asset::img("zoomIn.png") ?></div>');
+    }
 
-        gMap.gmap3({
-          action: 'init',
-            onces: {
-              bounds_changed: function(){
-                var number = 0;
-                jQuery(this).gmap3({
-                  action:'getBounds',
-                  callback: function (){
+    jQuery('body').prepend("<div id='target'></div>");
+
+    gMap.gmap3({
+      action: 'init',
+        onces: {
+          bounds_changed: function(){
+            var number = 0;
+            jQuery(this).gmap3({
+              action:'getBounds',
+              callback: function (){
 
 
 //ADD MARKERS HERE - FORMAT IS AS FOLLOWS...
@@ -58,7 +49,7 @@ add(
     jQuery(this),
     number += 1,
     "Colosseum",
-    "map_post.html",
+    "chi-tiet",
     "Via Sforza, 10<br />00184 Roma, Italy","41.890202","12.492228",
     '<img width="95" height="95" src="<?php echo Asset::get_file('colosseum.jpg', 'img', 'thumbs'); ?>" alt="" />'
   );
@@ -67,7 +58,7 @@ add(
     jQuery(this),
     number += 1,
     "Iguazu Falls",
-    "map_post.html",
+    "chi-tiet",
     "Iguazu Falls<br />Misiones, Argentina",
     "-25.69506",
     "-54.440432",
@@ -78,7 +69,7 @@ add(
     jQuery(this),
     number += 1,
     "Great Barrier Reef",
-    "map_post.html",
+    "chi-tiet",
     "Great Barrier Reef<br />Australia",
     "-10.21053",
     "142.159653",
@@ -89,7 +80,7 @@ add(
     jQuery(this),
     number += 1,
     "Statue of Liberty",
-    "map_post.html",
+    "chi-tiet",
     "Liberty Island<br />New York, NY 10004",
     "40.69005",
     "-74.045067",
@@ -100,7 +91,7 @@ add(
     jQuery(this),
     number += 1,
     "Chichen Itza",
-    "map_post.html",
+    "chi-tiet",
     "Chichen Itza<br />Mexico",
     "20.683341",
     "-88.569009",
@@ -111,7 +102,7 @@ add(
     jQuery(this),
     number += 1,
     "Taj Mahal",
-    "map_post.html",
+    "chi-tiet",
     "Taj Mahal<br />Agra, India",
     "27.174799",
     "78.042111",
@@ -122,7 +113,7 @@ add(
     jQuery(this),
     number += 1,
     "Great Wall of China",
-    "map_post.html",
+    "chi-tiet",
     "Great Wall of China<br />Beijing, China",
     "40.429076",
     "116.568219",
@@ -133,7 +124,7 @@ add(
     jQuery(this),
     number += 1,
     "Stonehenge",
-    "map_post.html",
+    "chi-tiet",
     "4 A344 Road<br />Wiltshire, Salisbury SP4 7DE, UK",
     "51.178859",
     "-1.82622",
@@ -144,7 +135,7 @@ add(
     jQuery(this),
     number += 1,
     "Great Pyramid of Giza",
-    "map_post.html",
+    "chi-tiet",
     "Great Pyramid of Giza<br />Egypt",
     "29.977316",
     "31.132314",
@@ -155,7 +146,7 @@ add(
     jQuery(this),
     number += 1,
     "Grand Canyon",
-    "map_post.html",
+    "chi-tiet",
     "Grand Canyon<br />Williams, AZ",
     "36.34313",
     "-112.51339",
@@ -166,7 +157,10 @@ add(
     jQuery(this),
     number += 1,
     "Eiffel Tower",
-    "map_post.html","Parc du Champ de Mars, 5 Ave Anatole France <br />75007 Paris, France","48.858588","2.293847",
+    "chi-tiet",
+    "Parc du Champ de Mars, 5 Ave Anatole France <br />75007 Paris, France",
+    "48.858588",
+    "2.293847",
     '<img width="95" height="95" src="<?php echo Asset::get_file('tower.jpg', 'img', 'thumbs'); ?>" alt="" />'
   );
 
@@ -240,11 +234,3 @@ add(
 </script>
 </div><!--end content-->
 </div><!--end contentContainer-->
-
-<div id="footer">
-  <!--COPYRIGHT NOTICE - IMPORTANT! DO NOT REMOVE GOOGLE NOTICE -->
-  <div id="copyright">
-    &copy; 2016 The GPS Vehicle. Map by Google. Site by <a href="<?php echo Uri::create('/') ?>">GPS Vehicle</a>
-  </div>
-
-</div><!--end footer-->
