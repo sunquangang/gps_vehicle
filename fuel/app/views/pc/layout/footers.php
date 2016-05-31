@@ -1,4 +1,7 @@
 <div id="footer">
+
+  <div id="markers"></div>
+
   <!--COPYRIGHT NOTICE - IMPORTANT! DO NOT REMOVE GOOGLE NOTICE -->
   <div id="copyright">
     &copy; 2016 The GPS Vehicle. Map by Google. Site by <a href="<?php echo Uri::create('/') ?>">GPS Vehicle</a>
