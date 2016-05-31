@@ -8,7 +8,7 @@
     <?php echo $headers ?>
   </head>
 
-  <body>
+  <body ng-app="gps_app">
 
     <div id="gMap"></div>
 
